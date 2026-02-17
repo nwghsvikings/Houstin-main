@@ -199,7 +199,7 @@ public class SubsystemBased extends LinearOpMode {
                 } //RESET TURRET TO POSITION 0
             }
             if(YB2) { //FAR GOAL VELOCITY - TESTED VALUE - ADJUST CAMERA OFFSET
-                flyWheel.setMaxVelocity(1800, DL);
+                flyWheel.setMaxVelocity(1800);
                 if(teamColor.getColor() == TeamColor.Colors.BLUE) {
                     CameraAngleAdjust = -4;
                 }
