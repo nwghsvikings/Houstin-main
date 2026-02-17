@@ -35,10 +35,10 @@ public class Drivetrain {
             bR.setPower(backRightPower);
         }
         else {
-            fL.setPower(0.5);
-            fR.setPower(0.5);
-            bL.setPower(-0.5);
-            bR.setPower(-0.5);
+            fL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+            fR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+            bL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+            bR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         }
     }

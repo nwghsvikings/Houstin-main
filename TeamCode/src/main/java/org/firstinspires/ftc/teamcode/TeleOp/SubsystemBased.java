@@ -36,6 +36,7 @@ public class SubsystemBased extends LinearOpMode {
         Gamepad previousGamepad1 = new Gamepad();
         Gamepad previousGamepad2 = new Gamepad();
         boolean ai = true;
+        boolean DL = false;
         while (opModeIsActive()) {
             double y = -gamepad1.left_stick_y; // Remember, Y stick value is reversed
             double rx = gamepad1.right_stick_x * 1.1; // Counteract imperfect strafing
@@ -66,7 +67,6 @@ public class SubsystemBased extends LinearOpMode {
             boolean YB2 = gamepad2.y;
             boolean AB2 = gamepad2.a;
             boolean RSB2 = gamepad2.right_stick_button && !previousGamepad2.right_stick_button;
-            boolean DL = gamepad1.dpad_left;
 
 
             /*
@@ -158,6 +158,9 @@ public class SubsystemBased extends LinearOpMode {
 
             if (x || x2) { //TOGGLE AUTO-AIM - BOTH CONTROLLERS
                 ai = !ai;
+            }
+            if (gamepad1.dpad_left && !gamepad1.dpadLeftWasPressed()) {
+                DL = !DL;
             }
             if(ai && !RSB && !turret.BusySettingPosition)
             {
